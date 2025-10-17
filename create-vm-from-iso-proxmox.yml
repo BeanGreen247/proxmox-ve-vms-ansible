@@ -57,7 +57,7 @@
 
 ---
 # PLAY: call Proxmox API from the control node (no sudo)
-- name: Create and boot VM from ISO via API
+- name: Manage VMs via Proxmox API
   hosts: localhost
   connection: local
   become: false
