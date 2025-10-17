@@ -1,4 +1,4 @@
-## Creating VMs in Proxmox VE using Ansible with Playbooks 
+## Creating VMs in Proxmox VE using Ansible Playbooks 
 
 For information about each major playbook look into each playbook at the top description
 
