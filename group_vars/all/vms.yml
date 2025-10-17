@@ -1,0 +1,75 @@
+# List of VMs to create
+#
+# Overview
+#   A simple list of VMs and their specs and isos that we want mounted
+#
+# What this playbook does
+#   * LIST of VM(s) to create 
+#       - Creates VM "shells" (vmid, CPU/RAM, net0, agent, scsihw, etc.)
+#
+# Key features
+#   * One place/file to change VM specs
+#
+# Notes & caveats
+#   * TBD
+#
+# Absolute minimum of parameters to create a VM
+#
+#     vms:
+#       - name: "ansible-minimal-vm"
+#         vmid: 600
+#         ostype: "l26"
+#         iso_storage: "local"
+#         iso_path: "iso/"
+#         iso_file: "debian-13.1.0-amd64-netinst.iso"
+#
+# Credit: Thomas Mozdren
+
+vms:
+  - name: "ansible-debian-vm"
+    vmid: 500
+    boot: "order=ide2;scsi0;net0"
+    bootdisk: scsi0
+    onboot: false
+    memory: 2048
+    cores: 2
+    net0: "virtio,bridge=vmbr0"
+    ostype: "l26"
+    agent: 1
+    disk_size_gb: 20
+    storage: "local-lvm"
+    iso_storage: "local"
+    iso_path: "iso/"
+    iso_file: "debian-13.1.0-amd64-netinst.iso"
+
+  - name: "ansible-rhel-vm"
+    vmid: 501
+    boot: "order=scsi0;ide2;net0"
+    bootdisk: scsi0
+    onboot: false
+    memory: 4096
+    cores: 4
+    net0: "virtio,bridge=vmbr0"
+    ostype: "l26"
+    agent: 1
+    disk_size_gb: 40
+    storage: "local-lvm"
+    iso_storage: "local"
+    iso_path: "iso/"
+    iso_file: "rhel-9.6-x86_64-dvd.iso"
+  
+  - name: "ansible-win10-vm"
+    vmid: 502
+    boot: "order=scsi0;ide2;net0"
+    bootdisk: scsi0
+    onboot: false
+    memory: 8192
+    cores: 4
+    net0: "virtio,bridge=vmbr0"
+    ostype: "win10"
+    agent: 1
+    disk_size_gb: 80
+    storage: "local-lvm"
+    iso_storage: "local"
+    iso_path: "iso/"
+    iso_file: "en-us_windows_10_iot_enterprise_ltsc_2021_x64_dvd_257ad90f.iso"
