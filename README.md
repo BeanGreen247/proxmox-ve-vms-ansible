@@ -8,6 +8,9 @@ install these on the proxmox ve server
 ```bash
 apt install ansible-core sudo python3 python3-pip
 pip install ansible-dev-tools --break-system-packages
+```
+after cloning the project
+```bash
 ansible-galaxy collection install -r collections/requirements.yml -p ./collections
 ```
 
