@@ -4,6 +4,32 @@ For information about each major playbook look into each playbook at the top des
 
 Also, this README is WIP
 
+## Project Structure
+
+```
+.
+├── ansible.cfg
+├── collections
+│   ├── ansible_collections
+│   └── requirements.yml
+├── create-vm-from-iso-proxmox.yml
+├── fetch-iso.yml
+├── group_vars
+│   ├── all
+│   └── proxmox-bms.yml
+├── host_vars
+│   └── localhost.yml
+├── img
+│   ├── highLevelPOV.jpg
+│   └── lowLevelPOV.jpg
+├── inventory
+│   └── hosts.ini
+├── LICENSE
+├── README.md
+└── setup-base-ansible-proxmox.yml
+
+````
+
 install these on the proxmox ve server
 ```bash
 apt install ansible-core sudo python3 python3-pip
