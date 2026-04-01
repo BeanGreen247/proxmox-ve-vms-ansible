@@ -26,7 +26,9 @@
 #   3) Run:
 #        ansible-playbook -i inventory/hosts.ini fetch-iso.yml --extra-vars '{"iso_url":"direct_url_to_iso_file","iso_file":"the_iso_file_itself.iso"}'
 #   N) Example:
-#        ansible-playbook -i inventory/hosts.ini fetch-iso.yml --extra-vars '{"iso_url":"https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-13.1.0-amd64-netinst.iso","iso_file":"debian-13.1.0-amd64-netinst.iso"}'
+#        ansible-playbook -i inventory/hosts.ini fetch-iso.yml --extra-vars
+#           '{"iso_url":"https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-13.1.0-amd64-netinst.iso",
+#             "iso_file":"debian-13.1.0-amd64-netinst.iso"}'
 #
 # Credit: Thomas Mozdren
 
@@ -46,7 +48,7 @@
         path: "{{ iso_dir }}"
         state: directory
         mode: "0755"
-      tags: [ always ]
+      tags: [always]
 
     - name: Download ISO if missing
       ansible.builtin.get_url:
@@ -55,7 +57,7 @@
         mode: "0644"
         force: false
       register: result
-      tags: [ always ]
+      tags: [always]
 
     - name: Print status of ISO download
       ansible.builtin.debug:
