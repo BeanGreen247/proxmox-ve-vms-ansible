@@ -1,3 +1,8 @@
+> [!WARNING]
+> **This repository has been consolidated.**
+> Development continues at [BeanGreen247/ansible-proxmox](https://github.com/BeanGreen247/ansible-proxmox), which combines this repo with [ansible-proxmox-update-upgrade](https://github.com/BeanGreen247/ansible-proxmox-update-upgrade) and [ansible-proxmox-ve-usage-status](https://github.com/BeanGreen247/ansible-proxmox-ve-usage-status) into a single workspace.
+> This repo is archived and will no longer receive updates.
+
 ## Manage VMs in Proxmox VE using Ansible Playbooks
 
 For information about each major playbook look into each playbook at the top description
